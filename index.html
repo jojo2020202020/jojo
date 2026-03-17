@@ -109,6 +109,19 @@ body {
     display: none;
 }
 
+<div id="thoughtsSection" style="display: none;">
+    <h5>My Thoughts 🤍</h5>
+
+    <p class="specialMessage">
+        بصراحة… هذا الموقع ما كانش مجرد فكرة 😅<br><br>
+        كان مجرد محاولة صغيرة باش نوصل إحساس كبير…<br>
+        وجودك في حياتي 🤍<br><br>
+
+        You are not just special... you are rare.<br>
+        And I’m really lucky to know you.
+    </p>
+</div>
+    
 h5 {
     font-size: 7vw;
     animation: glow 1.5s ease-in-out infinite alternate;
@@ -276,7 +289,24 @@ startBtn.addEventListener("click", function() {
                 spread: 120,
                 origin: { y: 0.6 }
             });
+thoughtsBtn.addEventListener("click", function() {
 
+    // نخفي الحاجات الأخرى
+    startBtn.style.display = "none";
+    counterSection.style.display = "none";
+    messageSection.style.display = "none";
+
+    // نعرض Thoughts
+    thoughtsSection.style.display = "block";
+
+    // تأثير خفيف
+    confetti({
+        particleCount: 120,
+        spread: 100,
+        origin: { y: 0.6 }
+    });
+
+});
             // القلوب
             for (let i = 0; i < 5; i++) {
                 setTimeout(createHeart, i * 200);
