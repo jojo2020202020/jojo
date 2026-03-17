@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -15,7 +16,7 @@
 
 
 
-start
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://s.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@200;300;400;500;700;800;900&display=swap" rel="stylesheet">
@@ -83,20 +84,15 @@ body {
     text-align: center;
 }
 
-#startBtn, #thoughtsBtn {
-padding: 14px 40px;
-font-size: 20px;
-border-radius: 30px;
-border: none;
-background: #00e5ff;
-color: white;
-cursor: pointer;
-transition: 0.3s;
-margin: 10px;
-}
-
-#startBtn:hover, #thoughtsBtn:hover {
-box-shadow: 0 0 15px #00e5ff;
+#startBtn {
+    padding: 14px 40px;
+    font-size: 20px;
+    border-radius: 30px;
+    border: none;
+    background: #00e5ff;
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
 }
 
 #startBtn:hover {
@@ -215,9 +211,7 @@ text-shadow: 0 0 6px rgba(255,255,255,0.3);
 </div>
 
 <div id="mainContent">
-   <button id="startBtn">Click Here</button>
-
-<button id="thoughtsBtn" onclick="openThoughts()">Thoughts</button>
+    <button id="startBtn">Click Here</button>
 
     <div id="counterSection">
         <span id="counter">0</span> Years
@@ -341,19 +335,10 @@ async function checkPassword() {
     }
 }
 
-
-
-function openThoughts(){
-    window.location.href = "mythoughts.html";
-}
 </script>
 
 </body>
 </html>
-
-
-
-
 
 
 
