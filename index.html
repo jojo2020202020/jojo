@@ -62,6 +62,7 @@ body {
     align-items: center;
     flex-direction: column;
     text-align: center;
+  
 }
 
 /* الأزرار */
@@ -153,6 +154,28 @@ h5 {
 }
 }
 
+
+
+    #backBtn {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    padding: 8px 18px;
+    border-radius: 20px;
+    border: 2px solid #00e5ff;
+    background: transparent;
+    color: #00e5ff;
+    cursor: pointer;
+    display: none;
+    font-size: 14px;
+}
+
+#backBtn:hover {
+    background: #00e5ff;
+    color: #0f0c29;
+}
+
+    
 </style>
 </head>
 
@@ -169,7 +192,7 @@ h5 {
 
 <!-- المحتوى -->
 <div id="mainContent">
-
+<button id="backBtn">⬅</button>
     <button class="mainBtn" id="startBtn">Click Here</button>
     <button class="mainBtn" id="thoughtsBtn">Thoughts</button>
 
@@ -208,10 +231,11 @@ let counterSection = document.getElementById("counterSection");
 let messageSection = document.getElementById("messageSection");
 let thoughtsSection = document.getElementById("thoughtsSection");
 let counterElement = document.getElementById("counter");
+    let backBtn = document.getElementById("backBtn");
 
 // زر Click Here
 startBtn.onclick = function() {
-
+backBtn.style.display = "block";
     startBtn.style.display = "none";
     counterSection.style.display = "block";
 
@@ -235,7 +259,7 @@ startBtn.onclick = function() {
 
 // زر Thoughts
 thoughtsBtn.onclick = function() {
-
+backBtn.style.display = "block";
     startBtn.style.display = "none";
     counterSection.style.display = "none";
     messageSection.style.display = "none";
@@ -289,6 +313,18 @@ async function checkPassword() {
     }
 }
 
+
+    backBtn.onclick = function() {
+
+    counterSection.style.display = "none";
+    messageSection.style.display = "none";
+    thoughtsSection.style.display = "none";
+
+    startBtn.style.display = "inline-block";
+    thoughtsBtn.style.display = "inline-block";
+
+    backBtn.style.display = "none";
+};
 </script>
 
 </body>
