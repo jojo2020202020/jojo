@@ -211,11 +211,31 @@ text-shadow: 0 0 6px rgba(255,255,255,0.3);
 </div>
 
 <div id="mainContent">
+    <div class="button-group">
+       <div id="buttonsContainer">
     <button id="startBtn">Click Here</button>
+    <button id="thoughtsBtn">Thoughts</button>
+</div>
+        <button id="thoughtsBtn">Thoughts</button>
+    </div>
 
     <div id="counterSection">
         <span id="counter">0</span> Years
     </div>
+
+    <div id="messageSection">
+        <h5>Happy Birthday Touta 🎉✨🤍</h5>
+        </div>
+
+    <div id="thoughtsSection" style="display: none;">
+        <h5 style="font-size: 5vw;">Special Thoughts 💭</h5>
+        <p class="specialMessage">
+            هنا يمكنك كتابة الخواطر التي تريد مشاركتها... <br>
+            مثلاً: "لطالما كانت الأيام معك مختلفة..."
+        </p>
+        <button onclick="backToMain()" style="background:transparent; border:1px solid #00e5ff; color:#00e5ff; padding:5px 15px; border-radius:15px; cursor:pointer;">Back</button>
+    </div>
+</div>
 
     <div id="messageSection">
         <h5>Happy Birthday Touta 🎉✨🤍</h5>
@@ -281,6 +301,17 @@ startBtn.addEventListener("click", function() {
         }
 
     }, 150);
+});
+
+    let thoughtsBtn = document.getElementById("thoughtsBtn");
+
+// عند الضغط على زر Thoughts
+thoughtsBtn.addEventListener("click", function() {
+    // هنا يمكنك إضافة ما سيحدث، مثلاً إظهار رسالة تنبيه حالياً
+    alert("هنا يمكنك وضع الخواطر التي تريدها يا يوسف ✨");
+    
+    // لإضافة تأثير القلوب عند الضغط عليه أيضاً
+    createHeart();
 });
 
 function createHeart() {
