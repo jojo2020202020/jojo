@@ -174,7 +174,9 @@ h5 {
     transition: 0.3s;
 }
 
-
+.specialMessage {
+    white-space: pre-line;
+}
     
 </style>
 </head>
@@ -211,9 +213,7 @@ h5 {
 
     <div id="thoughtsSection">
         <h5>My Thoughts 🤍</h5>
-        <p class="specialMessage">
-            You are not just special... you are rare 🤍
-        </p>
+        <p class="specialMessage" id="typeText"></p>
     </div>
 
 </div>
@@ -274,6 +274,10 @@ thoughtsBtn.onclick = function() {
     messageSection.style.display = "none";
 
     thoughtsSection.style.display = "block";
+
+    document.getElementById("typeText").innerHTML = "";
+i = 0;
+typeWriter();
 };
 
 // القلوب
@@ -333,6 +337,50 @@ async function checkPassword() {
 
     backBtn.style.display = "none";
 };
+
+
+
+    const message = `أيام بدون رؤيتها…
+هي أيام يزداد تفكيري بها
+
+هي أيام كل ما أفعله فيها هو العد…
+متى تنتهي لأراها
+
+هي أيام تجعلني أشتاق أكثر و أكثر
+لحديث… أو لقاء جديد
+
+كيف لا…
+و هي حاضرة دوماً في ذهني
+لا يهم إن كنت فرحاً أو حزيناً
+مشغولاً أو متفرغاً
+نائماً أو مستيقظاً
+
+هي أيام…
+أجد فيها نفسي أرغب في الحديث لها عن يومي
+جميل كان أم سيئ
+هادئ كان أم متعب
+مميز كان أم عادياً
+
+هي أيام تجعلني أتساءل…
+كيف هي الآن؟
+ماذا تفعل الآن؟
+هل هي مرتاحة؟
+أم هناك شيء يزعجها؟
+
+و متى تنتهي…
+أيام بدون رؤيتها 🤍`;
+
+
+
+    let i = 0;
+
+function typeWriter() {
+    if (i < message.length) {
+        document.getElementById("typeText").innerHTML += message.charAt(i);
+        i++;
+        setTimeout(typeWriter, 45);
+    }
+}
 </script>
 
 </body>
