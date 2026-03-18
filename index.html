@@ -1,9 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-
 <title>Click Here</title>
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
@@ -12,7 +10,6 @@
 <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
 
 <style>
-
 body {
     margin: 0;
     height: 100vh;
@@ -31,14 +28,12 @@ body {
     flex-direction: column;
     background: rgba(0,0,0,0.4);
 }
-
 #passwordScreen input {
     padding: 10px 15px;
     border-radius: 20px;
     border: none;
     margin-top: 15px;
 }
-
 #passwordScreen button {
     margin-top: 15px;
     padding: 10px 25px;
@@ -48,7 +43,6 @@ body {
     color: #00e5ff;
     cursor: pointer;
 }
-
 #passwordScreen button:hover {
     background: #00e5ff;
     color: #0f0c29;
@@ -62,7 +56,6 @@ body {
     align-items: center;
     flex-direction: column;
     text-align: center;
-
 }
 
 /* الأزرار */
@@ -76,7 +69,6 @@ body {
     cursor: pointer;
     margin: 10px;
 }
-
 .mainBtn:hover {
     box-shadow: 0 0 15px #00e5ff;
 }
@@ -91,7 +83,6 @@ h5 {
     font-size: 7vw;
     animation: glow 1.5s infinite alternate;
 }
-
 @keyframes glow {
     from { text-shadow: 0 0 5px #00e5ff; }
     to { text-shadow: 0 0 20px #8a2be2; }
@@ -106,7 +97,6 @@ h5 {
     opacity: 0;
     animation: fadeIn 2s forwards;
 }
-
 @keyframes fadeIn {
     to { opacity: 1; }
 }
@@ -118,7 +108,6 @@ h5 {
     height: 100%;
     z-index: -1;
 }
-
 .starfield::before {
     content: "";
     position: absolute;
@@ -128,7 +117,6 @@ h5 {
     background-size: 50px 50px;
     animation: moveStars 60s linear infinite;
 }
-
 @keyframes moveStars {
     from { transform: translate(0,0); }
     to { transform: translate(-50%, -50%); }
@@ -140,23 +128,21 @@ h5 {
     font-size: 22px;
     animation: floatUp 2.5s forwards;
 }
-
 @keyframes floatUp {
     to { transform: translateY(-150px); opacity: 0; }
 }
+
 .signature {
     position: fixed;
     bottom: 10px;
     width: 100%;
     text-align: center;
     font-size: 12px;
-    color: rgba(255, 255, 255, 0.5); /* شفافية */
+    color: rgba(255, 255, 255, 0.5);
 }
 
-
-
-
-    #backBtn {
+/* زر العودة */
+#backBtn {
     position: fixed;
     top: 20px;
     left: 20px;
@@ -174,44 +160,38 @@ h5 {
     transition: 0.3s;
 }
 
-.specialMessage {
+/* نص الرسالة */
+#typeText {
+    display: none;
+    max-height: 300px;
+    overflow-y: auto;
     white-space: pre-line;
-}
-
-
-    #typeText {
-    display: none;           /* مخفي في البداية */
-    max-height: 300px;       /* الحد الأقصى، يمكنك تغييره */
-    overflow-y: auto;        /* تفعيل التمرير العمودي عند طول النص */
-    white-space: pre-line;   /* يحافظ على الأسطر */
     padding: 10px;
     border-radius: 10px;
     background: rgba(0,0,0,0.3);
-    text-align: right;       /* للغة العربية */
+    text-align: right;
     font-family: "Tajawal", sans-serif;
     font-size: 18px;
 }
 
-
-
-
-    #messageIcon {
+/* أيقونة الرسالة النابضة */
+#messageIcon {
+    width: 80px;
+    cursor: pointer;
+    margin: 20px auto;
+    display: block;
     animation: pulse 1.5s infinite;
 }
-
 @keyframes pulse {
     0% { transform: scale(1); filter: drop-shadow(0 0 5px #00e5ff); }
     50% { transform: scale(1.1); filter: drop-shadow(0 0 15px #00e5ff); }
     100% { transform: scale(1); filter: drop-shadow(0 0 5px #00e5ff); }
 }
 
-
-    
 </style>
 </head>
 
 <body>
-
 <div class="starfield"></div>
 
 <!-- شاشة الدخول -->
@@ -226,38 +206,28 @@ h5 {
 
 <button id="backBtn">back</button>
 
-    <button class="mainBtn" id="startBtn">Click Here</button>
-    <button class="mainBtn" id="thoughtsBtn">Thoughts🤍</button>
+<button class="mainBtn" id="startBtn">Click Here</button>
+<button class="mainBtn" id="thoughtsBtn">Thoughts🤍</button>
 
-    <div id="counterSection">
-        <span id="counter">0</span> Years
-    </div>
+<div id="counterSection">
+    <span id="counter">0</span> Years
+</div>
 
-    <div id="messageSection">
-        <h5>Happy Birthday Touta 🎉</h5>
-        <p class="specialMessage">
-            كل عام وانتي بخير 🤍✨
-        </p>
-    </div>
+<div id="messageSection">
+    <h5>Happy Birthday Touta 🎉</h5>
+    <p class="specialMessage">كل عام وانتي بخير 🤍✨</p>
+</div>
 
 <div id="thoughtsSection">
-    <h5>a little msg for u ✨  </h5>
-
-    <!-- أيقونة الرسالة -->
-    <img id="messageIcon" src="letter.png" alt="Message" style="width:80px; cursor:pointer; margin:20px auto; display:block;">
-
-    <!-- النص المخفي -->
-    <p class="specialMessage" id="typeText" style="display:none;"></p>
+    <h5>a little msg for u ✨</h5>
+    <img id="messageIcon" src="letter.png" alt="Message">
+    <p class="specialMessage" id="typeText"></p>
 </div>
 
 <audio id="bgMusic" src="music.mp3" loop></audio>
-
-<div class="signature">
-    Made by Youcef for his one and only
-</div>
+<div class="signature">Made by Youcef for his one and only</div>
 
 <script>
-
 // عناصر
 let startBtn = document.getElementById("startBtn");
 let thoughtsBtn = document.getElementById("thoughtsBtn");
@@ -265,109 +235,74 @@ let counterSection = document.getElementById("counterSection");
 let messageSection = document.getElementById("messageSection");
 let thoughtsSection = document.getElementById("thoughtsSection");
 let counterElement = document.getElementById("counter");
-    let backBtn = document.getElementById("backBtn");
+let backBtn = document.getElementById("backBtn");
 
 // زر Click Here
 startBtn.onclick = function() {
-
     backBtn.style.display = "block";
-
     startBtn.style.display = "none";
-    thoughtsBtn.style.display = "none"; // 👈 أضف هذا
-
+    thoughtsBtn.style.display = "none";
     counterSection.style.display = "block";
 
     let count = 0;
-
     let interval = setInterval(() => {
         count++;
         counterElement.textContent = count;
-
         if (count === 21) {
             clearInterval(interval);
-
             counterSection.style.display = "none";
             messageSection.style.display = "block";
-
             confetti({ particleCount: 200, spread: 120 });
         }
-
     }, 150);
 };
+
 // زر Thoughts
 thoughtsBtn.onclick = function() {
     backBtn.style.display = "block";
     startBtn.style.display = "none";
     thoughtsBtn.style.display = "none";
-
     counterSection.style.display = "none";
     messageSection.style.display = "none";
     thoughtsSection.style.display = "block";
-
-    // النص يبقى مخفي حتى تضغط على الصورة
-    document.getElementById("typeText").style.display = "none";
+    document.getElementById("typeText").style.display = "none"; // يبقى مخفي
 };
-// القلوب
-function createHeart() {
-    let heart = document.createElement("div");
-    heart.className = "heart";
-    heart.innerHTML = "🤍";
-
-    heart.style.left = Math.random() * window.innerWidth + "px";
-    heart.style.top = "90%";
-
-    document.body.appendChild(heart);
-
-    setTimeout(() => heart.remove(), 2500);
-}
 
 // كلمة السر
 const correctHash = "e2cf0dc86b19fa9bed2b62d0aa1217f5889d4ee4a17d073fd83c964cd46ced57";
-
 async function sha256(message) {
     const buffer = new TextEncoder().encode(message);
     const hash = await crypto.subtle.digest("SHA-256", buffer);
     return Array.from(new Uint8Array(hash)).map(b => b.toString(16).padStart(2, '0')).join('');
 }
-
 async function checkPassword() {
     const input = document.getElementById("passwordInput").value.toLowerCase();
     const hash = await sha256(input);
-
     if (hash === correctHash) {
         document.getElementById("passwordScreen").style.display = "none";
         document.getElementById("mainContent").style.display = "flex";
-
         let music = document.getElementById("bgMusic");
         music.volume = 0;
         music.play();
-
         let fade = setInterval(() => {
             if (music.volume < 0.3) music.volume += 0.02;
             else clearInterval(fade);
         }, 200);
-
-    } else {
-        alert("Wrong name 🙂");
-    }
+    } else alert("Wrong name 🙂");
 }
 
-
-    backBtn.onclick = function() {
-
+// زر العودة
+backBtn.onclick = function() {
     counterSection.style.display = "none";
     messageSection.style.display = "none";
     thoughtsSection.style.display = "none";
-
     startBtn.style.display = "inline-block";
     thoughtsBtn.style.display = "inline-block";
-
     backBtn.style.display = "none";
 };
 
-
-
-    const message = `أيام بدون رؤيتها…
+// رسالة الكتابة
+const message = `أيام بدون رؤيتها…
 هي أيام يزداد تفكيري بها
 
 هي أيام كل ما أفعله فيها هو العد
@@ -393,58 +328,37 @@ async function checkPassword() {
 و متى تنتهي
 أيام بدون رؤيتها 🤍`;
 
+let i = 0;
 
-
-    let i = 0;
-
-function typeWriter() {
+// دالة الكتابة
+function typeWriter(container) {
     if (i < message.length) {
         const char = message.charAt(i);
-        document.getElementById("typeText").innerHTML += char;
+        container.innerHTML += char;
         i++;
 
-        // تحديد التأخير حسب نوع الحرف
-        let delay = 45; // سرعة الكتابة العادية
-        if (char === "\n") delay = 400;           // توقف عند نهاية السطر
-        if (char === "." || char === "…" || char === "؟") delay = 250; // توقف عند النقاط أو الاستفهام
-        if (char === ",") delay = 100;            // توقف صغير عند الفواصل
+        // تحديد التأخير حسب الحرف
+        let delay = 45;
+        if (char === "\n") delay = 400;
+        if (char === "." || char === "…" || char === "؟") delay = 250;
+        if (char === ",") delay = 100;
 
+        container.scrollTop = container.scrollHeight; // تمرير تلقائي
 
-         // تمرير تلقائي للنص عند طول المحتوى
-        textContainer.scrollTop = textContainer.scrollHeight;
-
-        
-        setTimeout(typeWriter, delay);
+        setTimeout(() => typeWriter(container), delay);
     }
 }
 
-    document.getElementById("messageIcon").onclick = function() {
-    this.style.display = "none"; // تخفي الصورة بعد الضغط
-    const textContainer = document.getElementById("typeText");
-    textContainer.style.display = "block"; // يظهر النص
-    i = 0; // إعادة العداد
-    typeWriter(); // يبدأ الكتابة حرف حرف
-};
-
-    document.getElementById("messageIcon").onclick = function() {
-    this.style.display = "none"; // تخفي الصورة بعد الضغط
+// الضغط على أيقونة الرسالة
+document.getElementById("messageIcon").onclick = function() {
+    this.style.display = "none";
     const textContainer = document.getElementById("typeText");
     textContainer.style.display = "block";
     i = 0;
-    typeWriter(); // يبدأ الكتابة حرف حرف
+    typeWriter(textContainer);
 };
 
-
-    document.getElementById("messageIcon").onclick = function() {
-    this.style.display = "none"; // تخفي الصورة بعد الضغط
-    const textContainer = document.getElementById("typeText");
-    textContainer.style.display = "block"; // تظهر النص
-    i = 0; // إعادة العداد
-    typeWriter(); // يبدأ الكتابة حرف حرف
-};
-    
 </script>
-
 </body>
 </html>
 
