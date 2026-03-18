@@ -287,22 +287,17 @@ startBtn.onclick = function() {
 };
 // زر Thoughts
 thoughtsBtn.onclick = function() {
-
     backBtn.style.display = "block";
-
     startBtn.style.display = "none";
-    thoughtsBtn.style.display = "none"; // مهم
+    thoughtsBtn.style.display = "none";
 
     counterSection.style.display = "none";
     messageSection.style.display = "none";
-
     thoughtsSection.style.display = "block";
 
-    document.getElementById("typeText").innerHTML = "";
-i = 0;
-typeWriter();
+    // النص يبقى مخفي حتى تضغط على الصورة
+    document.getElementById("typeText").style.display = "none";
 };
-
 // القلوب
 function createHeart() {
     let heart = document.createElement("div");
@@ -409,6 +404,13 @@ function typeWriter() {
     }
 }
 
+    document.getElementById("messageIcon").onclick = function() {
+    this.style.display = "none"; // تخفي الصورة بعد الضغط
+    const textContainer = document.getElementById("typeText");
+    textContainer.style.display = "block"; // يظهر النص
+    i = 0; // إعادة العداد
+    typeWriter(); // يبدأ الكتابة حرف حرف
+};
 
     document.getElementById("messageIcon").onclick = function() {
     this.style.display = "none"; // تخفي الصورة بعد الضغط
