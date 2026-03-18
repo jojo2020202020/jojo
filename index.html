@@ -163,17 +163,13 @@ h5 {
 /* نص الرسالة */
 #typeText {
     display: none;
-    max-height: 300px;
-    overflow-y: auto;
-    white-space: pre-line;
+    white-space: pre-line;   /* يحافظ على الأسطر */
     padding: 10px;
-    border-radius: 10px;
-    background: rgba(0,0,0,0.3);
     text-align: right;
     font-family: "Tajawal", sans-serif;
     font-size: 18px;
+    line-height: 1.8;
 }
-
 /* أيقونة الرسالة النابضة */
 #messageIcon {
     width: 80px;
@@ -343,7 +339,6 @@ function typeWriter(container) {
         if (char === "." || char === "…" || char === "؟") delay = 250;
         if (char === ",") delay = 100;
 
-        container.scrollTop = container.scrollHeight; // تمرير تلقائي
 
         setTimeout(() => typeWriter(container), delay);
     }
