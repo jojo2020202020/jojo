@@ -1,18 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-
 <title>Click Here</title>
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@200;300;400;500;700;800;900&display=swap" rel="stylesheet">
-
 <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
 
 <style>
-
 body {
     margin: 0;
     height: 100vh;
@@ -22,7 +17,7 @@ body {
     background-size: cover;
 }
 
-/* شاشة كلمة السر */
+/* شاشة الدخول */
 #passwordScreen {
     height: 100vh;
     display: flex;
@@ -31,14 +26,12 @@ body {
     flex-direction: column;
     background: rgba(0,0,0,0.4);
 }
-
 #passwordScreen input {
     padding: 10px 15px;
     border-radius: 20px;
     border: none;
     margin-top: 15px;
 }
-
 #passwordScreen button {
     margin-top: 15px;
     padding: 10px 25px;
@@ -48,7 +41,6 @@ body {
     color: #00e5ff;
     cursor: pointer;
 }
-
 #passwordScreen button:hover {
     background: #00e5ff;
     color: #0f0c29;
@@ -62,7 +54,6 @@ body {
     align-items: center;
     flex-direction: column;
     text-align: center;
-  
 }
 
 /* الأزرار */
@@ -76,10 +67,7 @@ body {
     cursor: pointer;
     margin: 10px;
 }
-
-.mainBtn:hover {
-    box-shadow: 0 0 15px #00e5ff;
-}
+.mainBtn:hover { box-shadow: 0 0 15px #00e5ff; }
 
 /* الأقسام */
 #counterSection { display: none; font-size: 50px; }
@@ -91,12 +79,10 @@ h5 {
     font-size: 7vw;
     animation: glow 1.5s infinite alternate;
 }
-
 @keyframes glow {
     from { text-shadow: 0 0 5px #00e5ff; }
     to { text-shadow: 0 0 20px #8a2be2; }
 }
-
 .specialMessage {
     font-family: "Tajawal", sans-serif;
     font-size: 18px;
@@ -106,10 +92,7 @@ h5 {
     opacity: 0;
     animation: fadeIn 2s forwards;
 }
-
-@keyframes fadeIn {
-    to { opacity: 1; }
-}
+@keyframes fadeIn { to { opacity: 1; } }
 
 /* النجوم */
 .starfield {
@@ -118,7 +101,6 @@ h5 {
     height: 100%;
     z-index: -1;
 }
-
 .starfield::before {
     content: "";
     position: absolute;
@@ -128,7 +110,6 @@ h5 {
     background-size: 50px 50px;
     animation: moveStars 60s linear infinite;
 }
-
 @keyframes moveStars {
     from { transform: translate(0,0); }
     to { transform: translate(-50%, -50%); }
@@ -140,23 +121,19 @@ h5 {
     font-size: 22px;
     animation: floatUp 2.5s forwards;
 }
+@keyframes floatUp { to { transform: translateY(-150px); opacity: 0; } }
 
-@keyframes floatUp {
-    to { transform: translateY(-150px); opacity: 0; }
-}
 .signature {
     position: fixed;
     bottom: 10px;
     width: 100%;
     text-align: center;
     font-size: 12px;
-    color: rgba(255, 255, 255, 0.5); /* شفافية */
+    color: rgba(255,255,255,0.5);
 }
 
-
-
-
-    #backBtn {
+/* زر الرجوع */
+#backBtn {
     position: fixed;
     top: 20px;
     left: 20px;
@@ -167,17 +144,16 @@ h5 {
     background: rgba(255, 255, 255, 0.08);
     backdrop-filter: blur(10px);
     color: #00e5ff;
-    font-size: 15px;
+    font-size: 14px;
     display: none;
     cursor: pointer;
     z-index: 999;
     transition: 0.3s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
-
-.specialMessage {
-    white-space: pre-line;
-}
-    
+#backBtn:hover { background: #00e5ff; color: #0f0c29; }
 </style>
 </head>
 
@@ -194,9 +170,7 @@ h5 {
 
 <!-- المحتوى -->
 <div id="mainContent">
-    
-<button id="backBtn">back</button>
-    
+    <button id="backBtn">⬅</button>
     <button class="mainBtn" id="startBtn">Click Here</button>
     <button class="mainBtn" id="thoughtsBtn">Thoughts🤍</button>
 
@@ -206,26 +180,38 @@ h5 {
 
     <div id="messageSection">
         <h5>Happy Birthday Touta 🎉</h5>
-        <p class="specialMessage">
-            كل عام وانتي بخير 🤍✨
+        <p class="specialMessage">كل عام وانتي بخير 🤍✨
+        <h5>Happy Birthday To the best girl ever</h5>
+        في هذا اليوم وُلد شخص غيّر فيَّ الكثير… أكثر مما كنت أتوقع <br>
+So, I decided to make this little website لأشاركك فرحة يوم ميلادك.<br>
+Koul 3am wnti belf bkhir ✨<br>
+لتكن العشرينات بداية المزيد والمزيد من التوفيق والنجاحات في حياتك انشاء الله <br>
+لتكن العشرينات كلها سعادة ونجاح
+  <br>  ابتسامة لا تغادر وجهك
+ <br> و اشراقا لا يغادر عينيك
+  <br> 🙄 koul 3am w7na solution homogène +
+        
+        
+        
+        
+        
+        
+        
         </p>
+        
     </div>
 
     <div id="thoughtsSection">
         <h5>My Thoughts 🤍</h5>
-        <p class="specialMessage" id="typeText"></p>
+        <p id="typeText" class="specialMessage"></p>
     </div>
-
 </div>
 
 <audio id="bgMusic" src="music.mp3" loop></audio>
 
-<div class="signature">
-    Made by Youcef for his one and only
-</div>
+<div class="signature">Made by Youcef for his one and only</div>
 
 <script>
-
 // عناصر
 let startBtn = document.getElementById("startBtn");
 let thoughtsBtn = document.getElementById("thoughtsBtn");
@@ -233,165 +219,99 @@ let counterSection = document.getElementById("counterSection");
 let messageSection = document.getElementById("messageSection");
 let thoughtsSection = document.getElementById("thoughtsSection");
 let counterElement = document.getElementById("counter");
-    let backBtn = document.getElementById("backBtn");
+let backBtn = document.getElementById("backBtn");
+
+// الرسالة لصفحة Thoughts
+let i = 0;
+const message = `أيام بدون رأيتها
+هي أيام يزداد تفكيري بها
+هي أيام كل ما افعله فيها هو العد متى تنتهي لرأيتها
+هي أيام تجعلني اشتاق اكثر و أكثر لحديث او لقاء جديد
+كيف لا و هي حاضرة دوما في ذهني لا يهم فرحا كنت ام حزينا
+مشغولا كنت ام متفرغا
+نائما كنت ام مستيقظا
+هي أيام اجد فيها نفسي أرغب في الحديث لها عن يومي جميل كان ام سيئا
+هادئا كان ام متعبا
+مميز كان ام عاديا
+هي ايام تجعلني اتسائل كيف هي الان؟، ماذا تفعل الان؟، هل هي مرتاحة؟ هل هي منزعجة ؟
+و متى تنتهي أيام بدون رأيتها ؟`;
+
+// كتابة الرسالة حرف حرف
+function typeWriter() {
+    if (i < message.length) {
+        const char = message.charAt(i);
+        document.getElementById("typeText").innerHTML += char;
+        i++;
+        let delay = 80; // سرعة الكتابة العادية
+        if (char === "\n") delay = 400;       // توقف عند نهاية السطر
+        if (char === "." || char === "…") delay = 250; // توقف عند النقاط
+        setTimeout(typeWriter, delay);
+    }
+}
 
 // زر Click Here
 startBtn.onclick = function() {
-
-    backBtn.style.display = "block";
-
+    backBtn.style.display = "flex";
     startBtn.style.display = "none";
-    thoughtsBtn.style.display = "none"; // 👈 أضف هذا
-
     counterSection.style.display = "block";
 
     let count = 0;
-
     let interval = setInterval(() => {
         count++;
         counterElement.textContent = count;
-
         if (count === 21) {
             clearInterval(interval);
-
             counterSection.style.display = "none";
             messageSection.style.display = "block";
-
             confetti({ particleCount: 200, spread: 120 });
         }
-
     }, 150);
 };
+
 // زر Thoughts
 thoughtsBtn.onclick = function() {
-
-    backBtn.style.display = "block";
-
+    backBtn.style.display = "flex";
     startBtn.style.display = "none";
-    thoughtsBtn.style.display = "none"; // مهم
-
     counterSection.style.display = "none";
     messageSection.style.display = "none";
-
     thoughtsSection.style.display = "block";
 
+    // إعادة تعيين المؤشر والكتابة
+    i = 0;
     document.getElementById("typeText").innerHTML = "";
-i = 0;
-typeWriter();
+    typeWriter();
 };
 
-// القلوب
-function createHeart() {
-    let heart = document.createElement("div");
-    heart.className = "heart";
-    heart.innerHTML = "🤍";
-
-    heart.style.left = Math.random() * window.innerWidth + "px";
-    heart.style.top = "90%";
-
-    document.body.appendChild(heart);
-
-    setTimeout(() => heart.remove(), 2500);
-}
+// زر Back
+backBtn.onclick = function() {
+    counterSection.style.display = "none";
+    messageSection.style.display = "none";
+    thoughtsSection.style.display = "none";
+    startBtn.style.display = "inline-block";
+    thoughtsBtn.style.display = "inline-block";
+    backBtn.style.display = "none";
+};
 
 // كلمة السر
 const correctHash = "e2cf0dc86b19fa9bed2b62d0aa1217f5889d4ee4a17d073fd83c964cd46ced57";
-
 async function sha256(message) {
     const buffer = new TextEncoder().encode(message);
     const hash = await crypto.subtle.digest("SHA-256", buffer);
     return Array.from(new Uint8Array(hash)).map(b => b.toString(16).padStart(2, '0')).join('');
 }
-
 async function checkPassword() {
     const input = document.getElementById("passwordInput").value.toLowerCase();
     const hash = await sha256(input);
-
     if (hash === correctHash) {
         document.getElementById("passwordScreen").style.display = "none";
         document.getElementById("mainContent").style.display = "flex";
-
         let music = document.getElementById("bgMusic");
         music.volume = 0;
         music.play();
-
-        let fade = setInterval(() => {
-            if (music.volume < 0.3) music.volume += 0.02;
-            else clearInterval(fade);
-        }, 200);
-
-    } else {
-        alert("Wrong name 🙂");
-    }
-}
-
-
-    backBtn.onclick = function() {
-
-    counterSection.style.display = "none";
-    messageSection.style.display = "none";
-    thoughtsSection.style.display = "none";
-
-    startBtn.style.display = "inline-block";
-    thoughtsBtn.style.display = "inline-block";
-
-    backBtn.style.display = "none";
-};
-
-
-
-    const message = `أيام بدون رؤيتها…
-هي أيام يزداد تفكيري بها
-
-هي أيام كل ما أفعله فيها هو العد…
-متى تنتهي لأراها
-
-هي أيام تجعلني أشتاق أكثر و أكثر
-لحديث… أو لقاء جديد
-
-كيف لا…
-و هي حاضرة دوماً في ذهني
-لا يهم إن كنت فرحاً أو حزيناً
-مشغولاً أو متفرغاً
-نائماً أو مستيقظاً
-
-هي أيام…
-أجد فيها نفسي أرغب في الحديث لها عن يومي
-جميل كان أم سيئ
-هادئ كان أم متعب
-مميز كان أم عادياً
-
-هي أيام تجعلني أتساءل…
-كيف هي الآن؟
-ماذا تفعل الآن؟
-هل هي مرتاحة؟
-أم هناك شيء يزعجها؟
-
-و متى تنتهي…
-أيام بدون رؤيتها 🤍`;
-
-
-
-    let i = 0;
-
-function typeWriter() {
-    if (i < message.length) {
-        document.getElementById("typeText").innerHTML += message.charAt(i);
-        i++;
-        setTimeout(typeWriter, 80);
-    }
+        let fade = setInterval(() => { if (music.volume < 0.3) music.volume += 0.02; else clearInterval(fade); }, 200);
+    } else { alert("Wrong name 🙂"); }
 }
 </script>
 
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
