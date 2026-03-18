@@ -89,13 +89,18 @@ h5 {
 }
 
 .specialMessage {
-    font-family: "Tajawal", sans-serif;
+    margin-top: 20px;
     font-size: 18px;
     max-width: 600px;
     line-height: 1.8;
+
+    font-family: "Tajawal", sans-serif; 
+    font-weight: 700;
+
     direction: rtl;
-    opacity: 0;
-    animation: fadeIn 2s forwards;
+    text-align: center;
+
+    animation: glow 1.5s ease-in-out infinite alternate;
 }
 @keyframes fadeIn {
     to { opacity: 1; }
