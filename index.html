@@ -178,6 +178,11 @@ h5 {
     white-space: pre-line;
 }
 
+
+    #typeText {
+    display: none;
+}
+
 </style>
 </head>
 
@@ -213,8 +218,9 @@ h5 {
 
     <div id="thoughtsSection">
         <h5>To her 🤍</h5>
-        <p class="specialMessage" id="typeText"></p>
-    </div>
+        <img id="messageIcon" src="letter.png" alt="Message" style="width:80px; cursor:pointer; margin-top:20px;">
+    <p class="specialMessage" id="typeText"></p>
+</div>
 
 </div>
 
@@ -389,6 +395,15 @@ function typeWriter() {
         setTimeout(typeWriter, delay);
     }
 }
+
+
+    document.getElementById("messageIcon").onclick = function() {
+    this.style.display = "none"; // تخفي الصورة بعد الضغط
+    const textContainer = document.getElementById("typeText");
+    textContainer.style.display = "block";
+    i = 0;
+    typeWriter(); // يبدأ الكتابة حرف حرف
+};
 </script>
 
 </body>
