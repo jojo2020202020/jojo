@@ -237,8 +237,12 @@ let counterElement = document.getElementById("counter");
 
 // زر Click Here
 startBtn.onclick = function() {
-backBtn.style.display = "block";
+
+    backBtn.style.display = "block";
+
     startBtn.style.display = "none";
+    thoughtsBtn.style.display = "none"; // 👈 أضف هذا
+
     counterSection.style.display = "block";
 
     let count = 0;
@@ -258,16 +262,18 @@ backBtn.style.display = "block";
 
     }, 150);
 };
-
 // زر Thoughts
 thoughtsBtn.onclick = function() {
-backBtn.style.display = "block";
+
+    backBtn.style.display = "block";
+
     startBtn.style.display = "none";
+    thoughtsBtn.style.display = "none"; // 👈 مهم
+
     counterSection.style.display = "none";
     messageSection.style.display = "none";
 
     thoughtsSection.style.display = "block";
-
 };
 
 // القلوب
