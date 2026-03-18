@@ -376,10 +376,17 @@ async function checkPassword() {
 
 function typeWriter() {
     if (i < message.length) {
-        document.getElementById("typeText").innerHTML += message.charAt(i);
+        const char = message.charAt(i);
+        document.getElementById("typeText").innerHTML += char;
         i++;
-        setTimeout(typeWriter, 45);
-        setTimeout(typeWriter, 80);
+
+        // تحديد التأخير حسب نوع الحرف
+        let delay = 45; // سرعة الكتابة العادية
+        if (char === "\n") delay = 400;           // توقف عند نهاية السطر
+        if (char === "." || char === "…" || char === "؟") delay = 250; // توقف عند النقاط أو الاستفهام
+        if (char === ",") delay = 100;            // توقف صغير عند الفواصل
+
+        setTimeout(typeWriter, delay);
     }
 }
 </script>
