@@ -242,9 +242,13 @@ function typeWriter() {
         const char = message.charAt(i);
         document.getElementById("typeText").innerHTML += char;
         i++;
-        let delay = 80; // سرعة الكتابة العادية
-        if (char === "\n") delay = 400;       // توقف عند نهاية السطر
-        if (char === "." || char === "…") delay = 250; // توقف عند النقاط
+
+        // تحديد التأخير حسب نوع الحرف
+        let delay = 45; // سرعة الكتابة العادية
+        if (char === "\n") delay = 400;           // توقف عند نهاية السطر
+        if (char === "." || char === "…" || char === "؟") delay = 250; // توقف عند النقاط أو الاستفهام
+        if (char === ",") delay = 100;            // توقف صغير عند الفواصل
+
         setTimeout(typeWriter, delay);
     }
 }
