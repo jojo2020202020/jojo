@@ -183,6 +183,21 @@ h5 {
     display: none;
 }
 
+
+
+
+    #messageIcon {
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); filter: drop-shadow(0 0 5px #00e5ff); }
+    50% { transform: scale(1.1); filter: drop-shadow(0 0 15px #00e5ff); }
+    100% { transform: scale(1); filter: drop-shadow(0 0 5px #00e5ff); }
+}
+
+
+    
 </style>
 </head>
 
@@ -216,12 +231,14 @@ h5 {
         </p>
     </div>
 
-    <div id="thoughtsSection">
-        <h5>To her 🤍</h5>
-        <img id="messageIcon" src="letter.png" alt="Message" style="width:80px; cursor:pointer; margin-top:20px;">
-    <p class="specialMessage" id="typeText"></p>
-</div>
+<div id="thoughtsSection">
+    <h5>to you 🤍</h5>
 
+    <!-- أيقونة الرسالة -->
+    <img id="messageIcon" src="letter.png" alt="Message" style="width:80px; cursor:pointer; margin:20px auto; display:block;">
+
+    <!-- النص المخفي -->
+    <p class="specialMessage" id="typeText" style="display:none;"></p>
 </div>
 
 <audio id="bgMusic" src="music.mp3" loop></audio>
@@ -404,6 +421,16 @@ function typeWriter() {
     i = 0;
     typeWriter(); // يبدأ الكتابة حرف حرف
 };
+
+
+    document.getElementById("messageIcon").onclick = function() {
+    this.style.display = "none"; // تخفي الصورة بعد الضغط
+    const textContainer = document.getElementById("typeText");
+    textContainer.style.display = "block"; // تظهر النص
+    i = 0; // إعادة العداد
+    typeWriter(); // يبدأ الكتابة حرف حرف
+};
+    
 </script>
 
 </body>
