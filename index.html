@@ -89,18 +89,13 @@ h5 {
 }
 
 .specialMessage {
-    margin-top: 20px;
+    font-family: "Tajawal", sans-serif;
     font-size: 18px;
     max-width: 600px;
     line-height: 1.8;
-
-    font-family: "Tajawal", sans-serif; 
-    font-weight: 700;
-
     direction: rtl;
-    text-align: center;
-
-    animation: glow 1.5s ease-in-out infinite alternate;
+    opacity: 0;
+    animation: fadeIn 2s forwards;
 }
 @keyframes fadeIn {
     to { opacity: 1; }
@@ -215,6 +210,9 @@ h5 {
 </div>
 
 <div id="messageSection">
+    <h5>Happy Birthday Touta 🎉</h5>
+    <p class="specialMessage">كل عام وانتي بخير 🤍✨</p>
+</div>
     <h5>Happy Birthday Touta 🎉✨🤍</h5>
     <h5>Happy Birthday To the best girl ever</h5>
 
@@ -371,4 +369,4 @@ document.getElementById("messageIcon").onclick = function() {
 </script>
 </body>
 </html>
-
+~
