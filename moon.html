@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+<title>Her Moon</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    overflow:hidden;
+    width:100vw;
+    height:100vh;
+    background:#000;
+    font-family:Georgia,serif;
+}
+
+/* الخلفية الزرقاء */
+#background{
+    position:fixed;
+    inset:0;
+
+    background:url("space_bg.png") center/cover no-repeat;
+
+    opacity:0;
+}
+
+/* Canvas */
+#stars{
+    position:fixed;
+    inset:0;
+    width:100%;
+    height:100%;
+}
+
+/* طبقة سوداء */
+#cover{
+    position:fixed;
+    inset:0;
+    background:black;
+    z-index:5;
+}
+
+/* القمر */
+
+#moon{
+
+    position:absolute;
+
+    left:50%;
+    top:22%;
+
+    transform:translateX(-50%);
+
+    width:220px;
+
+    opacity:0;
+
+    z-index:4;
+
+    filter:
+        drop-shadow(0 0 10px rgba(255,255,255,.35))
+        drop-shadow(0 0 25px rgba(255,255,255,.2));
+}
+
+/* النص */
+
+#intro{
+
+    position:absolute;
+
+    left:50%;
+    top:50%;
+
+    transform:translate(-50%,-50%);
+
+    color:white;
+
+    font-size:clamp(30px,9vw,42px);
+
+    text-align:center;
+
+    opacity:0;
+
+    transition:2s;
+
+    z-index:6;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div id="background"></div>
+
+<canvas id="stars"></canvas>
+
+<img id="moon" src="moon.png">
+
+<div id="cover"></div>
+
+<div id="intro">
+In a quiet night of March 2006...
+</div>
+
+<script>
+
+// سنضيف الكود هنا في الجزء الثاني
+
+</script>
+
+</body>
+
+</html>
